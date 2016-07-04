@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using log4net;
 
 namespace PracaMagisterska
 {
@@ -16,5 +17,11 @@ namespace PracaMagisterska
 		{
 			InitializeComponent();
 		}
+
+		private void button1_Click(object sender, EventArgs e)
+		{
+			_logger.Info("Click!");
+		}
+		private static ILog _logger = LogManager.GetLogger(typeof(Form1));
 	}
 }
