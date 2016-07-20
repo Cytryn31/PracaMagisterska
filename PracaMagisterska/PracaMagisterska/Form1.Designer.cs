@@ -28,34 +28,32 @@
 		/// </summary>
 		private void InitializeComponent()
 		{
-			this.button1 = new System.Windows.Forms.Button();
+			System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
+			this.listView1 = new System.Windows.Forms.ListView();
 			this.SuspendLayout();
 			// 
-			// button1
+			// listView1
 			// 
-			this.button1.Location = new System.Drawing.Point(0, 0);
-			this.button1.Name = "button1";
-			this.button1.Size = new System.Drawing.Size(75, 23);
-			this.button1.TabIndex = 0;
-			this.button1.Text = "button1";
-			this.button1.UseVisualStyleBackColor = true;
-			this.button1.Click += new System.EventHandler(this.button1_Click);
+			this.listView1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
+			resources.ApplyResources(this.listView1, "listView1");
+			this.listView1.Name = "listView1";
+			this.listView1.UseCompatibleStateImageBehavior = false;
+			this.listView1.SelectedIndexChanged += new System.EventHandler(this.listView1_SelectedIndexChanged);
 			// 
 			// Form1
 			// 
-			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+			resources.ApplyResources(this, "$this");
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-			this.ClientSize = new System.Drawing.Size(284, 261);
-			this.Controls.Add(this.button1);
+			this.BackColor = System.Drawing.SystemColors.Window;
+			this.Controls.Add(this.listView1);
 			this.Name = "Form1";
-			this.Text = "Form1";
 			this.ResumeLayout(false);
 
 		}
 
 		#endregion
 
-		private System.Windows.Forms.Button button1;
+		private System.Windows.Forms.ListView listView1;
 	}
 }
 

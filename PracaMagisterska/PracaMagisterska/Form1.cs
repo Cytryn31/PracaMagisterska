@@ -23,5 +23,10 @@ namespace PracaMagisterska
 			_logger.Info("Click!");
 		}
 		private static ILog _logger = LogManager.GetLogger(typeof(Form1));
+
+		private void listView1_SelectedIndexChanged(object sender, EventArgs e)
+		{
+
+		}
 	}
 }
