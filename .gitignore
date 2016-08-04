@@ -2,3 +2,6 @@ PracaMagisterska/.vs/
 Properties/
 obj/
 bin/
+*.bmp
+*.png
+*.iso19794-2

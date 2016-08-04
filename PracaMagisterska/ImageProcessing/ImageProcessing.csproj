@@ -38,8 +38,10 @@
       <HintPath>..\packages\log4net.2.0.5\lib\net45-full\log4net.dll</HintPath>
       <Private>True</Private>
     </Reference>
+    <Reference Include="PresentationCore" />
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Drawing" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -49,6 +51,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="CmdExecutor.cs" />
+    <Compile Include="ImageProcessingHelper.cs" />
     <Compile Include="ImageProcessingModule.cs" />
     <Compile Include="Processors\GaborTransformImageProcessor.cs" />
     <Compile Include="Contract\IImageProcessor.cs" />

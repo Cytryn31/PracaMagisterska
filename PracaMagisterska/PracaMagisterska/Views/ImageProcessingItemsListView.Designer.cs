@@ -1,11 +1,14 @@
-﻿namespace PracaMagisterska.Views
+﻿using System.ComponentModel;
+using System.Windows.Forms;
+
+namespace PracaMagisterska.Views
 {
 	partial class ImageProcessingItemsListView
 	{
 		/// <summary> 
 		/// Required designer variable.
 		/// </summary>
-		private System.ComponentModel.IContainer components = null;
+		private IContainer components = null;
 
 		/// <summary> 
 		/// Clean up any resources being used.
@@ -28,30 +31,44 @@
 		/// </summary>
 		private void InitializeComponent()
 		{
-			this.listView1 = new System.Windows.Forms.ListView();
+			this.algorithmName = new System.Windows.Forms.Label();
+			this.textBox1 = new System.Windows.Forms.TextBox();
 			this.SuspendLayout();
 			// 
-			// listView1
+			// algorithmName
 			// 
-			this.listView1.Location = new System.Drawing.Point(3, 5);
-			this.listView1.Name = "listView1";
-			this.listView1.Size = new System.Drawing.Size(104, 97);
-			this.listView1.TabIndex = 0;
-			this.listView1.UseCompatibleStateImageBehavior = false;
+			this.algorithmName.AutoSize = true;
+			this.algorithmName.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+			this.algorithmName.Location = new System.Drawing.Point(3, 0);
+			this.algorithmName.Name = "algorithmName";
+			this.algorithmName.Size = new System.Drawing.Size(52, 18);
+			this.algorithmName.TabIndex = 0;
+			this.algorithmName.Text = "label1";
+			// 
+			// textBox1
+			// 
+			this.textBox1.Location = new System.Drawing.Point(0, 21);
+			this.textBox1.Name = "textBox1";
+			this.textBox1.Size = new System.Drawing.Size(177, 20);
+			this.textBox1.TabIndex = 1;
 			// 
 			// ImageProcessingItemsListView
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-			this.Controls.Add(this.listView1);
+			this.BackColor = System.Drawing.Color.White;
+			this.Controls.Add(this.textBox1);
+			this.Controls.Add(this.algorithmName);
 			this.Name = "ImageProcessingItemsListView";
-			this.Size = new System.Drawing.Size(110, 105);
+			this.Size = new System.Drawing.Size(177, 44);
 			this.ResumeLayout(false);
+			this.PerformLayout();
 
 		}
 
 		#endregion
 
-		private System.Windows.Forms.ListView listView1;
+		private Label algorithmName;
+		private TextBox textBox1;
 	}
 }
