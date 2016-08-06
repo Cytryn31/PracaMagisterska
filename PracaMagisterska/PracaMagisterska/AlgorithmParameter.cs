@@ -22,6 +22,9 @@ namespace PracaMagisterska
 		Int = 0,
 		Text = 1,
 		Double = 2,
-		Enum = 3
-	}
+		Enum = 3,
+        NzInt = 4,
+        NzDouble = 5
+    }
+
 }

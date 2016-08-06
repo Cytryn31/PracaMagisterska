@@ -14,7 +14,7 @@
       "Description": "czêstotliwoœæ",
       "Value": "0.0",
       "PossibleValues": "",
-      "ParameterType": 2
+      "ParameterType": 5
     }
   ]
 }

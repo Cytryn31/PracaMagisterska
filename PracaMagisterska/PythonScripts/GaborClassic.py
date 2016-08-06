@@ -1,5 +1,5 @@
 from __future__ import print_function
-
+import cv2
 import matplotlib.pyplot as plt
 import numpy as np
 from scipy import ndimage as ndi
@@ -44,7 +44,8 @@ if __name__ == "__main__":
     shrink = (slice(0, None, 3), slice(0, None, 3))
     # prepare filter bank kernels
     kernel = np.real(gabor_kernel(float(args.frq[0]), theta=float(args.angle[0])/180*np.pi))
-    img = img_as_float(data.load(args.image[0]))[shrink]
+    img = img_as_float(cv2.imread(args.image[0], 0))[shrink]
+
     # Plot a selection of the filter bank kernels and their responses.
     results = []
     kernel = gabor_kernel(float(args.frq[0]), theta=float(args.angle[0])/180*np.pi)
@@ -54,4 +55,3 @@ if __name__ == "__main__":
     from PIL import Image
     im = Image.fromarray(img)
     im.save('processedImage.tiff')
-

@@ -8,9 +8,10 @@ namespace PracaMagisterska
 {
 	public class Algorithms : Singleton<Algorithms>
 	{
-		string AlgorithmsLocation { get; } = AppSettings["AlgorithmsLocation"];
+		public static string AlgorithmsLocation { get; } = AppSettings["AlgorithmsLocation"];
 
 		List<Algorithm> _items = new List<Algorithm>();
+
 		public List<Algorithm> Items
 		{
 			get

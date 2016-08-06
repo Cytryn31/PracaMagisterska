@@ -75,8 +75,9 @@ if __name__ == "__main__":
     args = parser.parse_args()
 
     im = Image.open(args.image[0])
-    # im = im.convert("L")  # covert to grayscale
+
 
     im = make_thin(im)
     im = Image.fromarray(np.array(im))
     im.save("processedImage.tiff", "TIFF")
+

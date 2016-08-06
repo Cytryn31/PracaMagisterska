@@ -3,7 +3,7 @@ using System.Diagnostics;
 using System.IO;
 namespace ImageProcessing
 {
-	internal class CmdExecutor : ICmdExecutor
+	public class CmdExecutor : ICmdExecutor
 	{
 		public void Run(string cmd, string args)
 		{
