@@ -50,6 +50,7 @@ namespace PracaMagisterska.Views
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
 			this.Controls.Add(this.pictureBox1);
+			this.Cursor = System.Windows.Forms.Cursors.Cross;
 			this.Name = "PictureBoxControl";
 			this.Size = new System.Drawing.Size(257, 285);
 			((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
