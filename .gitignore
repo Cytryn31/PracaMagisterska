@@ -5,3 +5,5 @@ bin/
 *.bmp
 *.png
 *.iso19794-2
+*.pdf
+*.tiff

@@ -63,6 +63,7 @@
     <Compile Include="Algorithm.cs" />
     <Compile Include="AlgorithmParameter.cs" />
     <Compile Include="Algorithms.cs" />
+    <Compile Include="Common\Tuple.cs" />
     <Compile Include="Controlers\ImageProcessingItemsListController.cs" />
     <Compile Include="Bootstrapper.cs" />
     <Compile Include="FileSystemTool.cs" />
@@ -73,8 +74,13 @@
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
     <Compile Include="LoggingModule.cs" />
+    <Compile Include="MinutaePair.cs" />
+    <Compile Include="MinutaeTuples.cs" />
     <Compile Include="Minutiae.cs" />
     <Compile Include="MinutiaeManager.cs" />
+    <Compile Include="MinutiaeTuple.cs" />
+    <Compile Include="MinutiaeWithImage.cs" />
+    <Compile Include="Node.cs" />
     <Compile Include="PracaMagisterskaModule.cs" />
     <Compile Include="Processor.cs" />
     <Compile Include="Program.cs" />
