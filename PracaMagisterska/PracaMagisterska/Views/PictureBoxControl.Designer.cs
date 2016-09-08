@@ -31,7 +31,7 @@ namespace PracaMagisterska.Views
 		/// </summary>
 		private void InitializeComponent()
 		{
-			this.pictureBox1 = new System.Windows.Forms.PictureBox();
+			/*this.pictureBox1 = new System.Windows.Forms.PictureBox();
 			((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
 			this.SuspendLayout();
 			// 
@@ -55,7 +55,7 @@ namespace PracaMagisterska.Views
 			this.Name = "PictureBoxControl";
 			this.Size = new System.Drawing.Size(257, 285);
 			((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-			this.ResumeLayout(false);
+			this.ResumeLayout(false);*/
 
 		}
 

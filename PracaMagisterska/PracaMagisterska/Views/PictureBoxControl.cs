@@ -9,14 +9,15 @@ namespace PracaMagisterska.Views
 		private bool _wasFirstClick = false;
 		private Position _lastClickPosition;
 		private PictureBoxType type;
-		public PictureBox PictureBox => pictureBox1;
+		public PictureBox PictureBox => PicBox;
 		public Graphics gf;
 
 		public PictureBoxControl(PictureBoxType str) : base()
 		{
 			type = str;
 			InitializeComponent();
-			gf = pictureBox1.CreateGraphics();
+			gf = PictureBox.CreateGraphics();
+			PicBox.Click += new EventHandler(PictureBox_Click);
 		}
 
 		private int Angle(Position p1, Position p2)
@@ -37,8 +38,9 @@ namespace PracaMagisterska.Views
 			return new Point(currentPosition.X + 5 + (int)x, currentPosition.Y + 5 + (int)y);
 		}
 
-		private void pictureBox1_Click(object sender, EventArgs e)
+		private void PictureBox_Click(object sender, EventArgs e)
 		{
+			if (mode.Equals(PictureBoxMode.Zoom))return;
 			var mouseEventArgs = e as MouseEventArgs;
 			if (mouseEventArgs != null)
 			{
@@ -112,13 +114,13 @@ namespace PracaMagisterska.Views
 		{
 			if (type.Equals(PictureBoxType.Ref))
 			{
-				var img = ImageProcessing.ImageProcessingHelper.ResizeImage(MinutiaeManager.Instance.ReferenceImage.ImagePath, pictureBox1.Height, pictureBox1.Width);
-				pictureBox1.Image = img;
+				var img = ImageProcessing.ImageProcessingHelper.ResizeImage(MinutiaeManager.Instance.ReferenceImage.ImagePath, PictureBox.Height, PictureBox.Width);
+				PictureBox.Image = img;
 			}
 			else
 			{
-				var img = ImageProcessing.ImageProcessingHelper.ResizeImage(MinutiaeManager.Instance.CalculatedImage.ImagePath, pictureBox1.Height, pictureBox1.Width);
-				pictureBox1.Image = img;
+				var img = ImageProcessing.ImageProcessingHelper.ResizeImage(MinutiaeManager.Instance.CalculatedImage.ImagePath, PictureBox.Height, PictureBox.Width);
+				PictureBox.Image = img;
 			}
 
 		}
@@ -156,7 +158,7 @@ namespace PracaMagisterska.Views
 			}
 		}
 
-		private void pictureBox1_MouseMove(object sender, MouseEventArgs e)
+		private void PictureBox_MouseMove(object sender, MouseEventArgs e)
 		{
 			MinutiaeManager.Instance.CallDrawEclipses(this, type);
 			if (_wasFirstClick)

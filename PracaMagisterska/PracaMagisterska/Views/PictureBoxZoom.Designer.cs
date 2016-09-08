@@ -5,15 +5,20 @@ using System.Windows.Forms;
 
 namespace PracaMagisterska.Views
 {
+	public enum PictureBoxMode
+	{
+		Zoom = 0,
+		Marking= 1
+	}
 	partial class PictureBoxZoom : System.Windows.Forms.UserControl
 	{
 		#region Members
 
-		private System.Windows.Forms.PictureBox PicBox;
+		protected System.Windows.Forms.PictureBox PicBox;
 		private Panel OuterPanel;
 		private Container components = null;
 		private string m_sPicName = "";
-
+		public PictureBoxMode mode = PictureBoxMode.Zoom;
 		#endregion
 
 		#region Constants
@@ -158,7 +163,7 @@ namespace PracaMagisterska.Views
 			PicBox.SizeMode = PictureBoxSizeMode.StretchImage;
 			PicBox.Location = new Point(0, 0);
 			OuterPanel.Dock = DockStyle.Fill;
-			OuterPanel.Cursor = System.Windows.Forms.Cursors.NoMove2D;
+	//		OuterPanel.Cursor = System.Windows.Forms.Cursors.NoMove2D;
 			OuterPanel.AutoScroll = true;
 			OuterPanel.MouseEnter += new EventHandler(PicBox_MouseEnter);
 			PicBox.MouseEnter += new EventHandler(PicBox_MouseEnter);
@@ -225,6 +230,7 @@ namespace PracaMagisterska.Views
 		/// <param name="e"></param>
 		private void PicBox_MouseWheel(object sender, MouseEventArgs e)
 		{
+			if (!mode.Equals(PictureBoxMode.Zoom))return;
 			if (e.Delta < 0)
 			{
 				ZoomIn();
