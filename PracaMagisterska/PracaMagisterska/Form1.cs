@@ -1,7 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Drawing;
 using System.Drawing.Imaging;
 using System.IO;
@@ -11,6 +9,7 @@ using BrightIdeasSoftware;
 using ImageProcessing;
 using log4net;
 using PracaMagisterska.Properties;
+using System.Globalization;
 
 namespace PracaMagisterska
 {
@@ -51,6 +50,7 @@ namespace PracaMagisterska
 						FileName = dlg.FileName;
 						img = ImageProcessingHelper.ResizeImage(img, pictureBox.Height, pictureBox.Width);
 						pictureBox.Image = img;
+						MinutiaeManager.Instance.ReferenceImage.ImagePath = img;
 						//						pictureBoxControl2.PictureBox.Image = (Image)img.Clone();
 						_logger.Info("Opening a file successfully completed");
 					}
@@ -164,6 +164,7 @@ namespace PracaMagisterska
 			userControlWithAutomaticGeneratedContent1.FiillVals();
 			userControlWithAutomaticGeneratedContent1.RefreshVals();
 			var algorithms = new List<Algorithm>();
+			if (objectListView2.Objects == null) return;
 			foreach (var item in objectListView2.Objects)
 			{
 				var tmp = Algorithms.Instance.Items.First(p => p.Description.Equals((item as Algorithm).Description));
@@ -192,6 +193,8 @@ namespace PracaMagisterska
 			var img = FromFile(Processor.FileName + ".tiff");
 			img = ImageProcessingHelper.ResizeImage(img, pictureBoxControl2.PictureBox.Height, pictureBoxControl2.PictureBox.Width);
 			pictureBoxControl2.PictureBox.Image = img;
+			MinutiaeManager.Instance.CalculatedImage.ImagePath = img;
+
 			_logger.Info("Opening a file successfully completed");
 			//EnableControls(this);
 		}
@@ -212,7 +215,7 @@ namespace PracaMagisterska
 			}
 			if (type == ParameterType.NzDouble || type == ParameterType.NzInt)
 			{
-				return decimal.Parse(text) != 0;
+				return decimal.Parse(text, CultureInfo.InvariantCulture) != 0;
 			}
 			return true;
 		}

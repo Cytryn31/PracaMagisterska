@@ -9,16 +9,12 @@ if __name__ == "__main__":
     parser.add_argument("image", nargs=1, help = "path to image")
 
     args = parser.parse_args()
-    image = cv2.imread(args.image[0], 0)
+    image = cv2.imread(args.image[0], 1)
 
 
 
 
-    grey = np.zeros((image.shape[0], image.shape[1])) # init 2D numpy array
-    # get row number
-    for rownum in range(len(image)):
-       for colnum in range(len(image[rownum])):
-          grey[rownum][colnum] = weightedAverage(image[rownum][colnum])
+    grey = cv2.cvtColor(image, cv2.COLOR_BGR2GRAY)
 
     from PIL import Image
 

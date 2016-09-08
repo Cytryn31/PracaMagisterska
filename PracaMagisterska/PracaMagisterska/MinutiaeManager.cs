@@ -2,13 +2,20 @@
 using System.Collections.Generic;
 using System.Linq;
 using PracaMagisterska.Common;
+using System.IO;
+using System.Drawing;
 
 namespace PracaMagisterska
 {
+	public enum PictureBoxType
+	{
+		Ref = 0,
+		Calc = 1
+	}
 	public class MinutiaeManager : Singleton<MinutiaeManager>
 	{
-		public MinutiaeWithImage<Minutiae> ReferenceImage;
-		public MinutiaeWithImage<Minutiae> CalculatedImage;
+		public MinutiaeWithImage<Minutiae> ReferenceImage = new MinutiaeWithImage<Minutiae>();
+		public MinutiaeWithImage<Minutiae> CalculatedImage = new MinutiaeWithImage<Minutiae>();
 		public static double TranslationMax = 5;
 		public static double RotationMax = 8;
 		public static double DirMax = 8;
@@ -20,6 +27,41 @@ namespace PracaMagisterska
 		public static double Beta = 0.4;
 		public static double Gamma = 0.2;
 		public static Node Tree = new Node();
+
+		public static Image FromFile(string path)
+		{
+			var bytes = File.ReadAllBytes(path);
+			var ms = new MemoryStream(bytes);
+			var img = Image.FromStream(ms);
+			return img;
+		}
+
+		public void CallDrawEclipses(Views.PictureBoxControl boxControl, PictureBoxType type )
+		{
+			if(type == PictureBoxType.Ref)
+			{
+			//	boxControl.UpdateImage((ReferenceImage.ImagePath));
+				foreach (var min in ReferenceImage.Minutiaes)
+				{
+					boxControl.DrawEclipse(min.Position,min.Orientation);
+				}
+				
+			}
+			else
+			{
+			//	boxControl.UpdateImage((CalculatedImage.ImagePath));
+				foreach (var min in CalculatedImage.Minutiaes)
+				{
+					boxControl.DrawEclipse(min.Position, min.Orientation);
+				}
+			}
+		}
+
+		public void CallDrawline(Views.PictureBoxControl boxControl, PictureBoxType type, Position pos)
+		{
+			//boxControl.UpdateImage();
+		//	boxControl.DrawLastEclipse(pos);
+		}
 
 		public List<Common.Tuple<Minutiae>> PairMinutaes()
 		{

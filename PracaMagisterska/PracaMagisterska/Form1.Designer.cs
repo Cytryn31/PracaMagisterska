@@ -43,8 +43,9 @@
 			this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
 			this.button3 = new System.Windows.Forms.Button();
 			this.userControlWithAutomaticGeneratedContent1 = new PracaMagisterska.Views.UserControlWithAutomaticGeneratedContent();
-			this.pictureBoxControl2 = new PracaMagisterska.Views.PictureBoxControl();
-			this.pictureBoxControl1 = new PracaMagisterska.Views.PictureBoxControl();
+			this.pictureBoxZoom1 = new PracaMagisterska.Views.PictureBoxZoom();
+			this.pictureBoxControl2 = new PracaMagisterska.Views.PictureBoxControl(PictureBoxType.Calc);
+			this.pictureBoxControl1 = new PracaMagisterska.Views.PictureBoxControl(PictureBoxType.Ref);
 			((System.ComponentModel.ISupportInitialize)(this.objectListView2)).BeginInit();
 			((System.ComponentModel.ISupportInitialize)(this.objectListView1)).BeginInit();
 			this.SuspendLayout();
@@ -163,20 +164,31 @@
 			// pictureBoxControl2
 			// 
 			this.pictureBoxControl2.BackColor = System.Drawing.Color.White;
+			this.pictureBoxControl2.Cursor = System.Windows.Forms.Cursors.Cross;
 			resources.ApplyResources(this.pictureBoxControl2, "pictureBoxControl2");
 			this.pictureBoxControl2.Name = "pictureBoxControl2";
 			// 
 			// pictureBoxControl1
 			// 
 			this.pictureBoxControl1.BackColor = System.Drawing.Color.White;
+			this.pictureBoxControl1.Cursor = System.Windows.Forms.Cursors.Cross;
 			resources.ApplyResources(this.pictureBoxControl1, "pictureBoxControl1");
 			this.pictureBoxControl1.Name = "pictureBoxControl1";
+			// 
+			// pictureBoxZoom1
+			// 
+			this.pictureBoxZoom1.Border = System.Windows.Forms.BorderStyle.FixedSingle;
+			resources.ApplyResources(this.pictureBoxZoom1, "pictureBoxZoom1");
+			this.pictureBoxZoom1.Name = "pictureBoxZoom1";
+			this.pictureBoxZoom1.Picture = "";
+			this.pictureBoxZoom1.PictureImage = null;
 			// 
 			// Form1
 			// 
 			resources.ApplyResources(this, "$this");
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
 			this.BackColor = System.Drawing.SystemColors.HotTrack;
+			this.Controls.Add(this.pictureBoxZoom1);
 			this.Controls.Add(this.userControlWithAutomaticGeneratedContent1);
 			this.Controls.Add(this.button4);
 			this.Controls.Add(this.button3);
@@ -212,6 +224,7 @@
 		private Views.UserControlWithAutomaticGeneratedContent userControlWithAutomaticGeneratedContent1;
 		private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
 		private System.Windows.Forms.Button button3;
+		private Views.PictureBoxZoom pictureBoxZoom1;
 	}
 }
 
