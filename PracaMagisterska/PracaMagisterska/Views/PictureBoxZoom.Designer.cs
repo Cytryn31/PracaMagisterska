@@ -18,12 +18,13 @@ namespace PracaMagisterska.Views
 		private Panel OuterPanel;
 		private Container components = null;
 		private string m_sPicName = "";
-		public PictureBoxMode mode = PictureBoxMode.Zoom;
+		public PictureBoxMode mode = PictureBoxMode.Marking;
+		public int ZoomInAllowed = 0;
 		#endregion
 
 		#region Constants
 
-		private double ZOOMFACTOR = 1.25;   // = 25% smaller or larger
+		private double ZOOMFACTOR = 5.00;   // = 25% smaller or larger
 		private int MINMAX = 5;             // 5 times bigger or smaller than the ctrl
 
 		#endregion
@@ -34,6 +35,7 @@ namespace PracaMagisterska.Views
 		{
 			this.PicBox = new System.Windows.Forms.PictureBox();
 			this.OuterPanel = new System.Windows.Forms.Panel();
+			((System.ComponentModel.ISupportInitialize)(this.PicBox)).BeginInit();
 			this.OuterPanel.SuspendLayout();
 			this.SuspendLayout();
 			// 
@@ -41,7 +43,7 @@ namespace PracaMagisterska.Views
 			// 
 			this.PicBox.Location = new System.Drawing.Point(0, 0);
 			this.PicBox.Name = "PicBox";
-			this.PicBox.Size = new System.Drawing.Size(150, 140);
+			this.PicBox.Size = new System.Drawing.Size(370, 410);
 			this.PicBox.TabIndex = 3;
 			this.PicBox.TabStop = false;
 			// 
@@ -53,14 +55,15 @@ namespace PracaMagisterska.Views
 			this.OuterPanel.Dock = System.Windows.Forms.DockStyle.Fill;
 			this.OuterPanel.Location = new System.Drawing.Point(0, 0);
 			this.OuterPanel.Name = "OuterPanel";
-			this.OuterPanel.Size = new System.Drawing.Size(210, 190);
+			this.OuterPanel.Size = new System.Drawing.Size(370, 410);
 			this.OuterPanel.TabIndex = 4;
 			// 
-			// PictureBox
+			// PictureBoxZoom
 			// 
 			this.Controls.Add(this.OuterPanel);
-			this.Name = "PictureBox";
-			this.Size = new System.Drawing.Size(210, 190);
+			this.Name = "PictureBoxZoom";
+			this.Size = new System.Drawing.Size(370, 410);
+			((System.ComponentModel.ISupportInitialize)(this.PicBox)).EndInit();
 			this.OuterPanel.ResumeLayout(false);
 			this.ResumeLayout(false);
 
@@ -233,11 +236,19 @@ namespace PracaMagisterska.Views
 			if (!mode.Equals(PictureBoxMode.Zoom))return;
 			if (e.Delta < 0)
 			{
-				ZoomIn();
+				if (ZoomInAllowed < 1)
+				{
+					ZoomIn();
+					ZoomInAllowed++;
+				}
 			}
 			else
 			{
-				ZoomOut();
+				if (ZoomInAllowed > 0)
+				{
+					ZoomOut();
+					ZoomInAllowed--;
+				}
 			}
 		}
 

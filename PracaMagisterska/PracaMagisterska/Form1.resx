@@ -178,7 +178,7 @@
     <value>NoControl</value>
   </data>
   <data name="calculate.Location" type="System.Drawing.Point, System.Drawing">
-    <value>413, 23</value>
+    <value>526, 20</value>
   </data>
   <data name="calculate.Size" type="System.Drawing.Size, System.Drawing">
     <value>104, 23</value>
@@ -304,7 +304,7 @@
     <value>objectListView2</value>
   </data>
   <data name="&gt;&gt;objectListView2.Type" xml:space="preserve">
-    <value>BrightIdeasSoftware.ObjectListView, ObjectListView, Version=2.9.1.26637, Culture=neutral, PublicKeyToken=b1c5bf581481bcd4</value>
+    <value>BrightIdeasSoftware.ObjectListView, ObjectListView, Version=2.9.1.30919, Culture=neutral, PublicKeyToken=b1c5bf581481bcd4</value>
   </data>
   <data name="&gt;&gt;objectListView2.Parent" xml:space="preserve">
     <value>$this</value>
@@ -334,7 +334,7 @@
     <value>objectListView1</value>
   </data>
   <data name="&gt;&gt;objectListView1.Type" xml:space="preserve">
-    <value>BrightIdeasSoftware.ObjectListView, ObjectListView, Version=2.9.1.26637, Culture=neutral, PublicKeyToken=b1c5bf581481bcd4</value>
+    <value>BrightIdeasSoftware.ObjectListView, ObjectListView, Version=2.9.1.30919, Culture=neutral, PublicKeyToken=b1c5bf581481bcd4</value>
   </data>
   <data name="&gt;&gt;objectListView1.Parent" xml:space="preserve">
     <value>$this</value>
@@ -382,10 +382,10 @@
     <value>3</value>
   </data>
   <data name="userControlWithAutomaticGeneratedContent1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>128, 344</value>
+    <value>260, 477</value>
   </data>
   <data name="userControlWithAutomaticGeneratedContent1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>576, 150</value>
+    <value>771, 150</value>
   </data>
   <data name="userControlWithAutomaticGeneratedContent1.TabIndex" type="System.Int32, mscorlib">
     <value>15</value>
@@ -403,10 +403,10 @@
     <value>1</value>
   </data>
   <data name="pictureBoxControl2.Location" type="System.Drawing.Point, System.Drawing">
-    <value>535, 52</value>
+    <value>656, 52</value>
   </data>
   <data name="pictureBoxControl2.Size" type="System.Drawing.Size, System.Drawing">
-    <value>257, 285</value>
+    <value>375, 415</value>
   </data>
   <data name="pictureBoxControl2.TabIndex" type="System.Int32, mscorlib">
     <value>6</value>
@@ -427,7 +427,7 @@
     <value>260, 52</value>
   </data>
   <data name="pictureBoxControl1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>257, 285</value>
+    <value>375, 415</value>
   </data>
   <data name="pictureBoxControl1.TabIndex" type="System.Int32, mscorlib">
     <value>5</value>
@@ -454,7 +454,7 @@
     <value>None</value>
   </data>
   <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
-    <value>832, 496</value>
+    <value>1050, 639</value>
   </data>
   <data name="$this.Icon" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
@@ -6635,13 +6635,13 @@
     <value>olvColumn2</value>
   </data>
   <data name="&gt;&gt;olvColumn2.Type" xml:space="preserve">
-    <value>BrightIdeasSoftware.OLVColumn, ObjectListView, Version=2.9.1.26637, Culture=neutral, PublicKeyToken=b1c5bf581481bcd4</value>
+    <value>BrightIdeasSoftware.OLVColumn, ObjectListView, Version=2.9.1.30919, Culture=neutral, PublicKeyToken=b1c5bf581481bcd4</value>
   </data>
   <data name="&gt;&gt;olvColumn1.Name" xml:space="preserve">
     <value>olvColumn1</value>
   </data>
   <data name="&gt;&gt;olvColumn1.Type" xml:space="preserve">
-    <value>BrightIdeasSoftware.OLVColumn, ObjectListView, Version=2.9.1.26637, Culture=neutral, PublicKeyToken=b1c5bf581481bcd4</value>
+    <value>BrightIdeasSoftware.OLVColumn, ObjectListView, Version=2.9.1.30919, Culture=neutral, PublicKeyToken=b1c5bf581481bcd4</value>
   </data>
   <data name="&gt;&gt;$this.Name" xml:space="preserve">
     <value>Form1</value>

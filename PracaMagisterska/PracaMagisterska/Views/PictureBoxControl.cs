@@ -11,6 +11,7 @@ namespace PracaMagisterska.Views
 		private PictureBoxType type;
 		public PictureBox PictureBox => PicBox;
 		public Graphics gf;
+		public int factor = 1;
 
 		public PictureBoxControl(PictureBoxType str) : base()
 		{
@@ -26,16 +27,20 @@ namespace PracaMagisterska.Views
 			float yDiff = p1.Y - p2.Y;
 			return (int)(Math.Atan2(yDiff, xDiff) * (float)(180 / Math.PI));
 		}
+
 		public void DrawEclipse(Position clickPosition, int orient)
 		{
-			gf.DrawEllipse(new Pen(Color.Red, 2), new Rectangle(clickPosition.X, clickPosition.Y, 10, 10));
-			gf.DrawLine(new Pen(Color.GreenYellow, 2), CalculatePositionOfOrientationVector(clickPosition, orient), new Point(clickPosition.X + 5, clickPosition.Y + 5));
+			if (ZoomInAllowed == 0) factor = 1;
+			else factor = 5;
+			gf.DrawEllipse(new Pen(Color.Red, 2), new Rectangle(factor *clickPosition.X, factor * clickPosition.Y, 10, 10));
+			gf.DrawLine(new Pen(Color.GreenYellow, 2), CalculatePositionOfOrientationVector(clickPosition, orient), new Point(factor * clickPosition.X + 5, factor * clickPosition.Y + 5));
 		}
+
 		private Point CalculatePositionOfOrientationVector(Position currentPosition, int orient, int distance = 10)
 		{
 			var x = distance * Math.Cos(orient * Math.PI / 180);
 			var y = distance * Math.Sin(orient * Math.PI / 180);
-			return new Point(currentPosition.X + 5 + (int)x, currentPosition.Y + 5 + (int)y);
+			return new Point(factor * currentPosition.X + 5 + (int)x, factor * currentPosition.Y + 5 + (int)y);
 		}
 
 		private void PictureBox_Click(object sender, EventArgs e)
@@ -65,6 +70,7 @@ namespace PracaMagisterska.Views
 						Add(_lastClickPosition.X, _lastClickPosition.Y, Angle(clickPosition, _lastClickPosition), MinutiaeType.Unknown);
 						Cursor.Clip = Rectangle.Empty;
 						_wasFirstClick = false;
+						MinutiaeManager.Instance.CallDrawEclipses(this, type);
 					}
 				}
 

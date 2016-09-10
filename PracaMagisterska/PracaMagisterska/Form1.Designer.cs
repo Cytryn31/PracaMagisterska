@@ -42,9 +42,12 @@
 			this.olvColumn1 = ((BrightIdeasSoftware.OLVColumn)(new BrightIdeasSoftware.OLVColumn()));
 			this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
 			this.button3 = new System.Windows.Forms.Button();
+			this.userControlWithAutomaticGeneratedContent1 = new PracaMagisterska.Views.UserControlWithAutomaticGeneratedContent();
+
 			this.pictureBoxControl2 = new PracaMagisterska.Views.PictureBoxControl(PictureBoxType.Calc);
 			this.pictureBoxControl1 = new PracaMagisterska.Views.PictureBoxControl(PictureBoxType.Ref);
-			this.userControlWithAutomaticGeneratedContent1 = new PracaMagisterska.Views.UserControlWithAutomaticGeneratedContent();
+			this.checkBox1 = new System.Windows.Forms.CheckBox();
+			this.checkBox2 = new System.Windows.Forms.CheckBox();
 			((System.ComponentModel.ISupportInitialize)(this.objectListView2)).BeginInit();
 			((System.ComponentModel.ISupportInitialize)(this.objectListView1)).BeginInit();
 			this.SuspendLayout();
@@ -185,6 +188,8 @@
 			resources.ApplyResources(this, "$this");
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
 			this.BackColor = System.Drawing.SystemColors.HotTrack;
+			this.Controls.Add(this.checkBox2);
+			this.Controls.Add(this.checkBox1);
 			this.Controls.Add(this.userControlWithAutomaticGeneratedContent1);
 			this.Controls.Add(this.button4);
 			this.Controls.Add(this.button3);
@@ -201,6 +206,7 @@
 			((System.ComponentModel.ISupportInitialize)(this.objectListView2)).EndInit();
 			((System.ComponentModel.ISupportInitialize)(this.objectListView1)).EndInit();
 			this.ResumeLayout(false);
+			this.PerformLayout();
 
 		}
 
@@ -220,6 +226,8 @@
 		private Views.UserControlWithAutomaticGeneratedContent userControlWithAutomaticGeneratedContent1;
 		private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
 		private System.Windows.Forms.Button button3;
+		private System.Windows.Forms.CheckBox checkBox1;
+		private System.Windows.Forms.CheckBox checkBox2;
 	}
 }
 

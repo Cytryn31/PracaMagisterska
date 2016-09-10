@@ -135,6 +135,9 @@
     <EmbeddedResource Include="Views\PictureBoxControl.resx">
       <DependentUpon>PictureBoxControl.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Views\PictureBoxZoom.resx">
+      <DependentUpon>PictureBoxZoom.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Views\UserControlWithAutomaticGeneratedContent.resx">
       <DependentUpon>UserControlWithAutomaticGeneratedContent.cs</DependentUpon>
     </EmbeddedResource>

@@ -17,6 +17,7 @@ namespace PracaMagisterska
 	{
 		private static ILog _logger = LogManager.GetLogger(typeof(Form1));
 		private static string FileName;
+
 		public Form1()
 		{
 			InitializeComponent();
@@ -237,6 +238,7 @@ namespace PracaMagisterska
 			}
 		}
 	}
+
 	public static class Extensions
 	{
 		public static bool IsNumeric(this string s)
