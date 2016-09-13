@@ -7,7 +7,7 @@ namespace PracaMagisterska
 {
 	public class MinutiaeWithImage<T>
 	{
-		[JsonProperty]
+		[JsonIgnore]
 		public Image ImagePath { get; set; }
 		[JsonProperty]
 		public List<T> Minutiaes { get; set; } = new List<T>();

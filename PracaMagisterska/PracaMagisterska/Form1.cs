@@ -10,6 +10,7 @@ using ImageProcessing;
 using log4net;
 using PracaMagisterska.Properties;
 using System.Globalization;
+using Newtonsoft.Json;
 
 namespace PracaMagisterska
 {
@@ -17,7 +18,6 @@ namespace PracaMagisterska
 	{
 		private static ILog _logger = LogManager.GetLogger(typeof(Form1));
 		private static string FileName;
-
 		public Form1()
 		{
 			InitializeComponent();
@@ -52,6 +52,7 @@ namespace PracaMagisterska
 						img = ImageProcessingHelper.ResizeImage(img, pictureBox.Height, pictureBox.Width);
 						pictureBox.Image = img;
 						MinutiaeManager.Instance.ReferenceImage.ImagePath = img;
+						MinutiaeManager.Instance.ReferenceImage.Minutiaes.Clear();
 						//						pictureBoxControl2.PictureBox.Image = (Image)img.Clone();
 						_logger.Info("Opening a file successfully completed");
 					}
@@ -229,12 +230,130 @@ namespace PracaMagisterska
 			con.Enabled = false;
 		}
 
-		private void EnableControls(Control con)
+		private void button5_Click_1(object sender, EventArgs e)
 		{
-			if (con != null)
+			try
 			{
-				con.Enabled = true;
-				EnableControls(con.Parent);
+				var pictureBox = pictureBoxControl2.PictureBox;
+				// Wrap the creation of the OpenFileDialog instance in a using statement,
+				// rather than manually calling the Dispose method to ensure proper disposal
+				using (var dlg = new OpenFileDialog())
+				{
+					dlg.Title = Resources.Form1_loadPictureButton_Click_Open_Image;
+					dlg.Filter = Resources.Form1_loadPictureButton_Click____bmp____jpg____jpeg___png_____BMP____JPG____JPEG____PNG;
+
+					if (dlg.ShowDialog() == DialogResult.OK)
+					{
+						var img = FromFile(dlg.FileName);
+						FileName = dlg.FileName;
+						img = ImageProcessingHelper.ResizeImage(img, pictureBox.Height, pictureBox.Width);
+						pictureBox.Image = img;
+						MinutiaeManager.Instance.CalculatedImage.ImagePath = img;
+						MinutiaeManager.Instance.CalculatedImage.Minutiaes.Clear();
+
+						_logger.Info("Opening a file successfully completed");
+					}
+				}
+			}
+			catch (Exception exception)
+			{
+				_logger.Error(exception.Message);
+			}
+		}
+
+		private void button6_Click(object sender, EventArgs e)
+		{
+			try
+			{
+				var sfd = new SaveFileDialog();
+				sfd.Filter = "Minucje|*.txt;*";
+				if (sfd.ShowDialog() == DialogResult.OK)
+				{
+					var output = "";
+					if (MinutiaeManager.Instance.ReferenceImage.Minutiaes.Any())
+					{
+						output = JsonConvert.SerializeObject(MinutiaeManager.Instance.ReferenceImage);
+					}
+					File.WriteAllText(sfd.FileName, output);
+					
+					_logger.Info("Minucje saved");
+				}
+			}
+			catch (Exception exception)
+			{
+				_logger.Error(exception.Message);
+			}
+		}
+
+		private void button7_Click(object sender, EventArgs e)
+		{
+			try
+			{
+				using (var dlg = new OpenFileDialog())
+				{
+					dlg.Title = "Plik z minucjami";
+
+					if (dlg.ShowDialog() == DialogResult.OK)
+					{
+						FileName = dlg.FileName;
+						var output = File.ReadAllText(FileName);
+						MinutiaeManager.Instance.ReferenceImage =  JsonConvert.DeserializeObject< MinutiaeWithImage<Minutiae>>(output);
+						_logger.Info("Opening a file successfully completed");
+						MinutiaeManager.Instance.CallDrawEclipses(pictureBoxControl1,PictureBoxType.Ref);
+					}
+				}
+			}
+			catch (Exception exception)
+			{
+				_logger.Error(exception.Message);
+			}
+		}
+
+		private void button9_Click(object sender, EventArgs e)
+		{
+			try
+			{
+				var sfd = new SaveFileDialog();
+				sfd.Filter = "Minucje|*.txt;*";
+				if (sfd.ShowDialog() == DialogResult.OK)
+				{
+					var output = "";
+					if (MinutiaeManager.Instance.CalculatedImage.Minutiaes.Any())
+					{
+						output = JsonConvert.SerializeObject(MinutiaeManager.Instance.CalculatedImage);
+					}
+					File.WriteAllText(sfd.FileName, output);
+
+					_logger.Info("Minucje saved");
+				}
+			}
+			catch (Exception exception)
+			{
+				_logger.Error(exception.Message);
+			}
+		}
+
+		private void button8_Click(object sender, EventArgs e)
+		{
+			try
+			{
+				using (var dlg = new OpenFileDialog())
+				{
+					dlg.Title = "Plik z minucjami";
+
+					if (dlg.ShowDialog() == DialogResult.OK)
+					{
+						FileName = dlg.FileName;
+						var output = File.ReadAllText(FileName);
+						MinutiaeManager.Instance.CalculatedImage = JsonConvert.DeserializeObject<MinutiaeWithImage<Minutiae>>(output);
+						_logger.Info("Opening a file successfully completed");
+						MinutiaeManager.Instance.CallDrawEclipses(pictureBoxControl2, PictureBoxType.Calc);
+					}
+				}
+			}
+			catch (Exception exception)
+			{
+				_logger.Error(exception.Message);
 			}
 		}
 	}

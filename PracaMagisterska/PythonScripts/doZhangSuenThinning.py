@@ -1,31 +1,3 @@
-def getA(binaryImage, y, x):
-    count = 0
-    if y - 1 >= 0 and x + 1 < len(binaryImage[y]) and binaryImage[y - 1][x] == 0 and binaryImage[y - 1][x + 1] == 1:
-        count += 1
-    if y - 1 >= 0 and x + 1 < len(binaryImage[y]) and binaryImage[y - 1][x + 1] == 0 and binaryImage[y][x + 1] == 1:
-        count += 1
-    if y + 1 < len(binaryImage) and x + 1 < len(binaryImage[y]) and binaryImage[y][x + 1] == 0 and \
-                    binaryImage[y + 1][x + 1] == 1:
-        count += 1
-    if y + 1 < len(binaryImage) and x + 1 < len(binaryImage[y]) and binaryImage[y + 1][x + 1] == 0 and \
-                    binaryImage[y + 1][x] == 1:
-        count += 1
-    if y + 1 < len(binaryImage) and x - 1 >= 0 and binaryImage[y + 1][x] == 0 and binaryImage[y + 1][x - 1] == 1:
-        count += 1
-    if y + 1 < len(binaryImage) and x - 1 >= 0 and binaryImage[y + 1][x - 1] == 0 and binaryImage[y][x - 1] == 1:
-        count += 1
-    if y - 1 >= 0 and x - 1 >= 0 and binaryImage[y][x - 1] == 0 and binaryImage[y - 1][x - 1] == 1:
-        count += 1
-    if y - 1 >= 0 and x - 1 >= 0 and binaryImage[y - 1][x - 1] == 0 and binaryImage[y - 1][x] == 1:
-        count += 1
-    return count
-
-
-def getB(binaryImage, y, x):
-    return binaryImage[y - 1][x] + binaryImage[y - 1][x + 1] + binaryImage[y][x + 1]
-    + binaryImage[y + 1][x + 1] + binaryImage[y + 1][x] + binaryImage[y + 1][x - 1]
-    + binaryImage[y][x - 1] + binaryImage[y - 1][x - 1]
-
 
 def neighbours(x, y, image):
     '''Return 8-neighbours of point p1 of picture, in order'''

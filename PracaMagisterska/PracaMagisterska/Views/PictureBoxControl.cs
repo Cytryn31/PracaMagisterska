@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Drawing;
+using System.Linq;
 using System.Windows.Forms;
 
 namespace PracaMagisterska.Views
@@ -9,6 +10,10 @@ namespace PracaMagisterska.Views
 		private bool _wasFirstClick = false;
 		private Position _lastClickPosition;
 		private PictureBoxType type;
+		private MinutiaeType[] MinutaeTypes = new[] { (MinutiaeType)1, (MinutiaeType)2, (MinutiaeType)3,
+			(MinutiaeType)4, (MinutiaeType)5, (MinutiaeType)6,
+			(MinutiaeType)7,(MinutiaeType) 8,(MinutiaeType) 9,
+			(MinutiaeType)10,(MinutiaeType) 11,(MinutiaeType) 12};
 		public PictureBox PictureBox => PicBox;
 		public Graphics gf;
 		public int factor = 1;
@@ -67,8 +72,17 @@ namespace PracaMagisterska.Views
 					}
 					else
 					{
-						Add(_lastClickPosition.X, _lastClickPosition.Y, Angle(clickPosition, _lastClickPosition), MinutiaeType.Unknown);
+						var minutiaeType = MinutiaeType.Unknown;
+						var regStoreForm = new InputBox();
 						Cursor.Clip = Rectangle.Empty;
+						if (regStoreForm.ShowDialog(this) == DialogResult.OK)
+						{
+							minutiaeType = regStoreForm.MinutiaeType;
+						};
+						if(!MinutaeTypes.Contains(minutiaeType)) minutiaeType = MinutiaeType.Unknown;
+						regStoreForm.Dispose();
+						Add(_lastClickPosition.X, _lastClickPosition.Y, Angle(clickPosition, _lastClickPosition), minutiaeType);
+						
 						_wasFirstClick = false;
 						MinutiaeManager.Instance.CallDrawEclipses(this, type);
 					}
