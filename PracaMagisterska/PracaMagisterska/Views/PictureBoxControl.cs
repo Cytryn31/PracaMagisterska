@@ -134,13 +134,33 @@ namespace PracaMagisterska.Views
 		{
 			if (type.Equals(PictureBoxType.Ref))
 			{
-				var img = ImageProcessing.ImageProcessingHelper.ResizeImage(MinutiaeManager.Instance.ReferenceImage.ImagePath, PictureBox.Height, PictureBox.Width);
-				PictureBox.Image = img;
+				if (MinutiaeManager.Instance.ReferenceImage != null)
+				{
+					if (MinutiaeManager.Instance.ReferenceImage.ImagePath != null)
+					{
+						var img = ImageProcessing.ImageProcessingHelper.ResizeImage(MinutiaeManager.Instance.ReferenceImage.ImagePath, PictureBox.Height, PictureBox.Width);
+						PictureBox.Image = img;
+					}
+					else
+					{
+						PictureBox.Image = null;
+					}
+				}
 			}
 			else
 			{
-				var img = ImageProcessing.ImageProcessingHelper.ResizeImage(MinutiaeManager.Instance.CalculatedImage.ImagePath, PictureBox.Height, PictureBox.Width);
-				PictureBox.Image = img;
+				if (MinutiaeManager.Instance.CalculatedImage != null)
+				{
+					if (MinutiaeManager.Instance.CalculatedImage.ImagePath != null)
+					{
+						var img = ImageProcessing.ImageProcessingHelper.ResizeImage(MinutiaeManager.Instance.CalculatedImage.ImagePath, PictureBox.Height, PictureBox.Width);
+						PictureBox.Image = img;
+					}
+					else
+					{
+						PictureBox.Image = null;
+					}
+				}
 			}
 
 		}

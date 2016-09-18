@@ -145,13 +145,13 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;loadPictureButton.ZOrder" xml:space="preserve">
-    <value>19</value>
+    <value>17</value>
   </data>
   <data name="savePictureButton.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
   </data>
   <data name="savePictureButton.Location" type="System.Drawing.Point, System.Drawing">
-    <value>765, 23</value>
+    <value>1006, 22</value>
   </data>
   <data name="savePictureButton.Size" type="System.Drawing.Size, System.Drawing">
     <value>90, 23</value>
@@ -172,7 +172,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;savePictureButton.ZOrder" xml:space="preserve">
-    <value>18</value>
+    <value>16</value>
   </data>
   <data name="calculate.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
@@ -199,13 +199,13 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;calculate.ZOrder" xml:space="preserve">
-    <value>15</value>
+    <value>13</value>
   </data>
   <data name="button1.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
   </data>
   <data name="button1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>103, 114</value>
+    <value>134, 393</value>
   </data>
   <data name="button1.Size" type="System.Drawing.Size, System.Drawing">
     <value>55, 23</value>
@@ -226,13 +226,13 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;button1.ZOrder" xml:space="preserve">
-    <value>13</value>
+    <value>11</value>
   </data>
   <data name="button2.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
   </data>
   <data name="button2.Location" type="System.Drawing.Point, System.Drawing">
-    <value>103, 143</value>
+    <value>195, 393</value>
   </data>
   <data name="button2.Size" type="System.Drawing.Size, System.Drawing">
     <value>55, 23</value>
@@ -253,43 +253,16 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;button2.ZOrder" xml:space="preserve">
-    <value>11</value>
-  </data>
-  <data name="button4.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="button4.Location" type="System.Drawing.Point, System.Drawing">
-    <value>103, 52</value>
-  </data>
-  <data name="button4.Size" type="System.Drawing.Size, System.Drawing">
-    <value>55, 23</value>
-  </data>
-  <data name="button4.TabIndex" type="System.Int32, mscorlib">
-    <value>14</value>
-  </data>
-  <data name="button4.Text" xml:space="preserve">
-    <value>DOWN</value>
-  </data>
-  <data name="&gt;&gt;button4.Name" xml:space="preserve">
-    <value>button4</value>
-  </data>
-  <data name="&gt;&gt;button4.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;button4.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="&gt;&gt;button4.ZOrder" xml:space="preserve">
     <value>9</value>
   </data>
   <data name="objectListView2.Font" type="System.Drawing.Font, System.Drawing">
     <value>Microsoft Sans Serif, 8.25pt, style=Bold</value>
   </data>
   <data name="objectListView2.Location" type="System.Drawing.Point, System.Drawing">
-    <value>164, 23</value>
+    <value>5, 207</value>
   </data>
   <data name="objectListView2.Size" type="System.Drawing.Size, System.Drawing">
-    <value>90, 315</value>
+    <value>250, 180</value>
   </data>
   <data name="objectListView2.TabIndex" type="System.Int32, mscorlib">
     <value>11</value>
@@ -304,13 +277,13 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;objectListView2.ZOrder" xml:space="preserve">
-    <value>12</value>
+    <value>10</value>
   </data>
   <data name="olvColumn2.Text" xml:space="preserve">
     <value>Name</value>
   </data>
   <data name="olvColumn2.Width" type="System.Int32, mscorlib">
-    <value>92</value>
+    <value>255</value>
   </data>
   <data name="objectListView1.Font" type="System.Drawing.Font, System.Drawing">
     <value>Microsoft Sans Serif, 8.25pt, style=Bold</value>
@@ -319,7 +292,7 @@
     <value>5, 22</value>
   </data>
   <data name="objectListView1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>90, 459</value>
+    <value>250, 180</value>
   </data>
   <data name="objectListView1.TabIndex" type="System.Int32, mscorlib">
     <value>9</value>
@@ -334,13 +307,13 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;objectListView1.ZOrder" xml:space="preserve">
-    <value>14</value>
+    <value>12</value>
   </data>
   <data name="olvColumn1.Text" xml:space="preserve">
     <value>Name</value>
   </data>
   <data name="olvColumn1.Width" type="System.Int32, mscorlib">
-    <value>92</value>
+    <value>255</value>
   </data>
   <metadata name="contextMenuStrip1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>17, 17</value>
@@ -354,38 +327,11 @@
   <data name="&gt;&gt;contextMenuStrip1.Type" xml:space="preserve">
     <value>System.Windows.Forms.ContextMenuStrip, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="button3.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="button3.Location" type="System.Drawing.Point, System.Drawing">
-    <value>103, 23</value>
-  </data>
-  <data name="button3.Size" type="System.Drawing.Size, System.Drawing">
-    <value>55, 23</value>
-  </data>
-  <data name="button3.TabIndex" type="System.Int32, mscorlib">
-    <value>13</value>
-  </data>
-  <data name="button3.Text" xml:space="preserve">
-    <value>UP</value>
-  </data>
-  <data name="&gt;&gt;button3.Name" xml:space="preserve">
-    <value>button3</value>
-  </data>
-  <data name="&gt;&gt;button3.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;button3.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="&gt;&gt;button3.ZOrder" xml:space="preserve">
-    <value>10</value>
-  </data>
   <data name="userControlWithAutomaticGeneratedContent1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>260, 477</value>
+    <value>5, 451</value>
   </data>
   <data name="userControlWithAutomaticGeneratedContent1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>771, 150</value>
+    <value>249, 237</value>
   </data>
   <data name="userControlWithAutomaticGeneratedContent1.TabIndex" type="System.Int32, mscorlib">
     <value>15</value>
@@ -402,53 +348,11 @@
   <data name="&gt;&gt;userControlWithAutomaticGeneratedContent1.ZOrder" xml:space="preserve">
     <value>8</value>
   </data>
-  <data name="checkBox1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>0, 0</value>
-  </data>
-  <data name="checkBox1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>104, 24</value>
-  </data>
-  <data name="checkBox1.TabIndex" type="System.Int32, mscorlib">
-    <value>2</value>
-  </data>
-  <data name="&gt;&gt;checkBox1.Name" xml:space="preserve">
-    <value>checkBox1</value>
-  </data>
-  <data name="&gt;&gt;checkBox1.Type" xml:space="preserve">
-    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;checkBox1.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="&gt;&gt;checkBox1.ZOrder" xml:space="preserve">
-    <value>7</value>
-  </data>
-  <data name="checkBox2.Location" type="System.Drawing.Point, System.Drawing">
-    <value>0, 0</value>
-  </data>
-  <data name="checkBox2.Size" type="System.Drawing.Size, System.Drawing">
-    <value>104, 24</value>
-  </data>
-  <data name="checkBox2.TabIndex" type="System.Int32, mscorlib">
-    <value>1</value>
-  </data>
-  <data name="&gt;&gt;checkBox2.Name" xml:space="preserve">
-    <value>checkBox2</value>
-  </data>
-  <data name="&gt;&gt;checkBox2.Type" xml:space="preserve">
-    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;checkBox2.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="&gt;&gt;checkBox2.ZOrder" xml:space="preserve">
-    <value>6</value>
-  </data>
   <data name="button5.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
   </data>
   <data name="button5.Location" type="System.Drawing.Point, System.Drawing">
-    <value>656, 23</value>
+    <value>897, 22</value>
   </data>
   <data name="button5.Size" type="System.Drawing.Size, System.Drawing">
     <value>104, 23</value>
@@ -469,7 +373,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;button5.ZOrder" xml:space="preserve">
-    <value>5</value>
+    <value>7</value>
   </data>
   <data name="button6.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
@@ -496,7 +400,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;button6.ZOrder" xml:space="preserve">
-    <value>4</value>
+    <value>6</value>
   </data>
   <data name="button7.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
@@ -523,55 +427,13 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;button7.ZOrder" xml:space="preserve">
-    <value>3</value>
-  </data>
-  <data name="pictureBoxControl2.Location" type="System.Drawing.Point, System.Drawing">
-    <value>656, 52</value>
-  </data>
-  <data name="pictureBoxControl2.Size" type="System.Drawing.Size, System.Drawing">
-    <value>375, 415</value>
-  </data>
-  <data name="pictureBoxControl2.TabIndex" type="System.Int32, mscorlib">
-    <value>6</value>
-  </data>
-  <data name="&gt;&gt;pictureBoxControl2.Name" xml:space="preserve">
-    <value>pictureBoxControl2</value>
-  </data>
-  <data name="&gt;&gt;pictureBoxControl2.Type" xml:space="preserve">
-    <value>PracaMagisterska.Views.PictureBoxControl, GeTuP, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</value>
-  </data>
-  <data name="&gt;&gt;pictureBoxControl2.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="&gt;&gt;pictureBoxControl2.ZOrder" xml:space="preserve">
-    <value>16</value>
-  </data>
-  <data name="pictureBoxControl1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>260, 52</value>
-  </data>
-  <data name="pictureBoxControl1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>375, 415</value>
-  </data>
-  <data name="pictureBoxControl1.TabIndex" type="System.Int32, mscorlib">
     <value>5</value>
-  </data>
-  <data name="&gt;&gt;pictureBoxControl1.Name" xml:space="preserve">
-    <value>pictureBoxControl1</value>
-  </data>
-  <data name="&gt;&gt;pictureBoxControl1.Type" xml:space="preserve">
-    <value>PracaMagisterska.Views.PictureBoxControl, GeTuP, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</value>
-  </data>
-  <data name="&gt;&gt;pictureBoxControl1.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="&gt;&gt;pictureBoxControl1.ZOrder" xml:space="preserve">
-    <value>17</value>
   </data>
   <data name="button8.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
   </data>
   <data name="button8.Location" type="System.Drawing.Point, System.Drawing">
-    <value>956, 23</value>
+    <value>1197, 22</value>
   </data>
   <data name="button8.Size" type="System.Drawing.Size, System.Drawing">
     <value>99, 23</value>
@@ -592,13 +454,13 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;button8.ZOrder" xml:space="preserve">
-    <value>0</value>
+    <value>3</value>
   </data>
   <data name="button9.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
   </data>
   <data name="button9.Location" type="System.Drawing.Point, System.Drawing">
-    <value>861, 23</value>
+    <value>1102, 22</value>
   </data>
   <data name="button9.Size" type="System.Drawing.Size, System.Drawing">
     <value>89, 23</value>
@@ -619,10 +481,103 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;button9.ZOrder" xml:space="preserve">
-    <value>1</value>
+    <value>4</value>
+  </data>
+  <data name="button3.Location" type="System.Drawing.Point, System.Drawing">
+    <value>782, 22</value>
+  </data>
+  <data name="button3.Size" type="System.Drawing.Size, System.Drawing">
+    <value>75, 23</value>
+  </data>
+  <data name="button3.TabIndex" type="System.Int32, mscorlib">
+    <value>21</value>
+  </data>
+  <data name="button3.Text" xml:space="preserve">
+    <value>&lt;-</value>
+  </data>
+  <data name="&gt;&gt;button3.Name" xml:space="preserve">
+    <value>button3</value>
+  </data>
+  <data name="&gt;&gt;button3.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;button3.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;button3.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="pictureBoxControl1.Location" type="System.Drawing.Point, System.Drawing">
+    <value>260, 52</value>
+  </data>
+  <data name="pictureBoxControl1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>516, 672</value>
+  </data>
+  <data name="pictureBoxControl1.TabIndex" type="System.Int32, mscorlib">
+    <value>5</value>
+  </data>
+  <data name="&gt;&gt;pictureBoxControl1.Name" xml:space="preserve">
+    <value>pictureBoxControl1</value>
+  </data>
+  <data name="&gt;&gt;pictureBoxControl1.Type" xml:space="preserve">
+    <value>PracaMagisterska.Views.PictureBoxControl, GeTuP, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;pictureBoxControl1.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;pictureBoxControl1.ZOrder" xml:space="preserve">
+    <value>15</value>
+  </data>
+  <data name="pictureBoxControl2.Location" type="System.Drawing.Point, System.Drawing">
+    <value>782, 52</value>
+  </data>
+  <data name="pictureBoxControl2.Size" type="System.Drawing.Size, System.Drawing">
+    <value>516, 672</value>
+  </data>
+  <data name="pictureBoxControl2.TabIndex" type="System.Int32, mscorlib">
+    <value>6</value>
+  </data>
+  <data name="&gt;&gt;pictureBoxControl2.Name" xml:space="preserve">
+    <value>pictureBoxControl2</value>
+  </data>
+  <data name="&gt;&gt;pictureBoxControl2.Type" xml:space="preserve">
+    <value>PracaMagisterska.Views.PictureBoxControl, GeTuP, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;pictureBoxControl2.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;pictureBoxControl2.ZOrder" xml:space="preserve">
+    <value>14</value>
+  </data>
+  <data name="button4.Location" type="System.Drawing.Point, System.Drawing">
+    <value>1166, 730</value>
+  </data>
+  <data name="button4.Size" type="System.Drawing.Size, System.Drawing">
+    <value>130, 23</value>
+  </data>
+  <data name="button4.TabIndex" type="System.Int32, mscorlib">
+    <value>22</value>
+  </data>
+  <data name="button4.Text" xml:space="preserve">
+    <value>Znajdź minucje</value>
+  </data>
+  <data name="&gt;&gt;button4.Name" xml:space="preserve">
+    <value>button4</value>
+  </data>
+  <data name="&gt;&gt;button4.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;button4.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;button4.ZOrder" xml:space="preserve">
+    <value>0</value>
   </data>
   <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
+  </metadata>
+  <metadata name="$this.TrayHeight" type="System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>25</value>
   </metadata>
   <data name="$this.AutoScaleDimensions" type="System.Drawing.SizeF, System.Drawing">
     <value>6, 13</value>
@@ -631,7 +586,7 @@
     <value>None</value>
   </data>
   <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
-    <value>1065, 639</value>
+    <value>1308, 774</value>
   </data>
   <data name="$this.Icon" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>

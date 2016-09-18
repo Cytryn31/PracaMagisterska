@@ -49,19 +49,21 @@ import argparse
 import cv2
 
 
-def changeValue(array, toValue, fromValue):
+def changeValue(array):
     for i in range(len(array)):
         for j in range(len(array[i])):
             # print array[y][x]
-            if array[i][j] == fromValue:
-                array[i][j] = toValue
+            if array[i][j] == 0:
+                array[i][j] = 1
+            elif array[i][j] > 0:
+                array[i][j] = 0
     return array
 
 def changeValueAndForZero(array):
     for i in range(len(array)):
         for j in range(len(array[i])):
             # print array[y][x]
-            if array[i][j] == 0:
+            if array[i][j] != 1:
                 array[i][j] = 255
     return array
 
@@ -71,8 +73,8 @@ if __name__ == "__main__":
     parser.add_argument("image", nargs=1, help="path to image")
     args = parser.parse_args()
     img = cv2.imread(args.image[0], 0)
-    th1 = cv2.adaptiveThreshold(img, 255, cv2.ADAPTIVE_THRESH_MEAN_C, cv2.THRESH_BINARY, 11, 2)
-    th1 = changeValue(th1, 1, 255)
+    # th1 = cv2.adaptiveThreshold(img, 255, cv2.ADAPTIVE_THRESH_MEAN_C, cv2.THRESH_BINARY, 11, 2)
+    th1 = changeValue(img)
     zhangSuen(th1)
     th1 = changeValueAndForZero(th1)
 

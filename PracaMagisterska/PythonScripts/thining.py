@@ -76,5 +76,5 @@ if __name__ == "__main__":
 
     im = make_thin(im)
     im = Image.fromarray(np.array(im))
-    im.save("processedImage.tiff", "TIFF")
+    im.save("processedImage.tiff", "tiff")
 

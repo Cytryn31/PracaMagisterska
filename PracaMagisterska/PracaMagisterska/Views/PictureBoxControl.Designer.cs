@@ -60,7 +60,5 @@ namespace PracaMagisterska.Views
 		}
 
 		#endregion
-
-		private PictureBox pictureBox1;
 	}
 }

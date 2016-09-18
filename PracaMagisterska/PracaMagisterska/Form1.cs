@@ -151,7 +151,7 @@ namespace PracaMagisterska
 			if (firstOrDefault != null)
 				foreach (var algorithmParameter in firstOrDefault.Parameters)
 				{
-					userControlWithAutomaticGeneratedContent1.AddField(algorithmParameter.Name, algorithmParameter.ParameterType, firstOrDefault.Description);
+					userControlWithAutomaticGeneratedContent1.AddField(algorithmParameter.Name, algorithmParameter.ParameterType, firstOrDefault.Description, algorithmParameter.Value);
 				}
 		}
 
@@ -275,7 +275,7 @@ namespace PracaMagisterska
 						output = JsonConvert.SerializeObject(MinutiaeManager.Instance.ReferenceImage);
 					}
 					File.WriteAllText(sfd.FileName, output);
-					
+
 					_logger.Info("Minucje saved");
 				}
 			}
@@ -297,9 +297,9 @@ namespace PracaMagisterska
 					{
 						FileName = dlg.FileName;
 						var output = File.ReadAllText(FileName);
-						MinutiaeManager.Instance.ReferenceImage =  JsonConvert.DeserializeObject< MinutiaeWithImage<Minutiae>>(output);
+						MinutiaeManager.Instance.ReferenceImage = JsonConvert.DeserializeObject<MinutiaeWithImage<Minutiae>>(output);
 						_logger.Info("Opening a file successfully completed");
-						MinutiaeManager.Instance.CallDrawEclipses(pictureBoxControl1,PictureBoxType.Ref);
+						MinutiaeManager.Instance.CallDrawEclipses(pictureBoxControl1, PictureBoxType.Ref);
 					}
 				}
 			}
@@ -355,6 +355,27 @@ namespace PracaMagisterska
 			{
 				_logger.Error(exception.Message);
 			}
+		}
+
+		private void button3_Click_1(object sender, EventArgs e)
+		{
+			MinutiaeManager.Instance.ReferenceImage.Minutiaes = MinutiaeManager.Instance.CalculatedImage.Minutiaes;
+			if (MinutiaeManager.Instance.CalculatedImage.ImagePath != null)
+			{
+				MinutiaeManager.Instance.ReferenceImage.ImagePath = (Image)MinutiaeManager.Instance.CalculatedImage.ImagePath.Clone();
+				MinutiaeManager.Instance.CalculatedImage.Minutiaes.Clear();
+			}
+			MinutiaeManager.Instance.CalculatedImage.ImagePath = null;
+
+			pictureBoxControl1.UpdateImage();
+			pictureBoxControl2.UpdateImage();
+		}
+
+		private void button4_Click_1(object sender, EventArgs e)
+		{
+			MinutiaeManager.Instance.CalculatedImage.Minutiaes = FeaturesExtractor.Instance.ExtractFeatures(pictureBoxControl2.PictureBox.Image, pictureBoxControl2.PictureBox.Height,
+				pictureBoxControl2.PictureBox.Width);
+			MinutiaeManager.Instance.CallDrawEclipses(pictureBoxControl2,PictureBoxType.Calc);
 		}
 	}
 

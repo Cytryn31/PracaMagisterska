@@ -43,7 +43,7 @@ namespace PracaMagisterska.Views
 			// 
 			this.PicBox.Location = new System.Drawing.Point(0, 0);
 			this.PicBox.Name = "PicBox";
-			this.PicBox.Size = new System.Drawing.Size(370, 410);
+			this.PicBox.Size = new System.Drawing.Size(516,672);
 			this.PicBox.TabIndex = 3;
 			this.PicBox.TabStop = false;
 			// 
@@ -55,14 +55,14 @@ namespace PracaMagisterska.Views
 			this.OuterPanel.Dock = System.Windows.Forms.DockStyle.Fill;
 			this.OuterPanel.Location = new System.Drawing.Point(0, 0);
 			this.OuterPanel.Name = "OuterPanel";
-			this.OuterPanel.Size = new System.Drawing.Size(370, 410);
+			this.OuterPanel.Size = new System.Drawing.Size(516, 672);
 			this.OuterPanel.TabIndex = 4;
 			// 
 			// PictureBoxZoom
 			// 
 			this.Controls.Add(this.OuterPanel);
 			this.Name = "PictureBoxZoom";
-			this.Size = new System.Drawing.Size(370, 410);
+			this.Size = new System.Drawing.Size(516, 672);
 			((System.ComponentModel.ISupportInitialize)(this.PicBox)).EndInit();
 			this.OuterPanel.ResumeLayout(false);
 			this.ResumeLayout(false);

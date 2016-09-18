@@ -1,5 +1,5 @@
 {
   "Name": "doZhangSuenThinning.py",
-  "Description": "Wychudzanie :)",
+  "Description": "Pocienianie",
   "Parameters": []
 }

@@ -37,16 +37,14 @@ namespace PracaMagisterska.Views
 			{
 				foreach (var algorithmParameter in algorithm.Parameters)
 				{
-					if (!_values.ContainsKey(algorithmParameter.Name) && algorithmParameter.ParameterType != ParameterType.Enum) CreateNewOrUpdateExisting(_values, algorithmParameter.Name, "0");
-					else if (algorithmParameter.ParameterType == ParameterType.Enum)
-					{
-						CreateNewOrUpdateExisting(_values, algorithmParameter.Name, "THRESH_BINARY");
-					}
+					if (!_values.ContainsKey(algorithmParameter.Name))
+						CreateNewOrUpdateExisting(_values, algorithmParameter.Name, algorithmParameter.Value);
+
 				}
 			}
 		}
 
-		public void AddField(string label, ParameterType type, string algoName)
+		public void AddField(string label, ParameterType type, string algoName, string algoVal)
 		{
 			var label1 = new Label
 			{
@@ -58,10 +56,11 @@ namespace PracaMagisterska.Views
 			Controls.Add(label1);
 			if (type != ParameterType.Enum)
 			{
-				if (!_values.ContainsKey(label)) CreateNewOrUpdateExisting(_values, label, "0");
+				if (!_values.ContainsKey(label))
+					CreateNewOrUpdateExisting(_values, label, algoVal);
 				var textBox1 = new TextBox
 				{
-					Location = new Point(xPos + 90, yPos - 5),
+					Location = new Point(xPos, yPos + 15),
 					Name = label,
 					Text = _values[label]
 				};
@@ -71,32 +70,21 @@ namespace PracaMagisterska.Views
 
 			if (type == ParameterType.Enum)
 			{
-				var checkBox = new ComboBox
+				CreateNewOrUpdateExisting(_values, label, algoVal);
+				var textBox1 = new TextBox
 				{
-					Location = new Point(xPos + 90, yPos - 5),
+					Location = new Point(xPos, yPos + 15),
 					Name = label,
+					Text = _values[label],
+					ReadOnly = true,
 					Size = new Size(150, 25),
 				};
-				var firstOrDefault = Algorithms.Instance.Items.FirstOrDefault(it => it.Description == algoName);
-				var algorithmParameter = firstOrDefault?.Parameters.FirstOrDefault(p => p.ParameterType == ParameterType.Enum);
-				if (algorithmParameter != null)
-					foreach (var alg in algorithmParameter.PossibleValues.Split(','))
-					{
-						checkBox.Items.Add(alg);
-					}
-
-				if (!_values.ContainsKey(label))
-				{
-					checkBox.SelectedIndex = 0;
-					CreateNewOrUpdateExisting(_values, label, checkBox.SelectedItem.ToString());
-				}
-				checkBox.SelectedIndex = checkBox.FindStringExact(_values[label]);
-				CreateNewOrUpdateExisting(_values, label, checkBox.SelectedItem.ToString());
-				Controls.Add(checkBox);
+				CreateNewOrUpdateExisting(_values, label, textBox1.Text);
+				Controls.Add(textBox1);
 			}
 
 			xPos += 250;
-			if (xPos > 300)
+			if (xPos > 200)
 			{
 				xPos = 5;
 				yPos += 35;

@@ -32,6 +32,8 @@ namespace PracaMagisterska
 
 	public enum MinutiaeType
 	{
-		Unknown = 0
+		Unknown = 0,
+		Ending = 1,
+		Bi = 2
 	}
 }

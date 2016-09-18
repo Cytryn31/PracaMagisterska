@@ -1,5 +1,5 @@
 {
   "Name": "NormalizatonGreyScale.py",
-  "Description": "Efekt szarości :)",
+  "Description": "Skala szarości",
   "Parameters":[]
 }
