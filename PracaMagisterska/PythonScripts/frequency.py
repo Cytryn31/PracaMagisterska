@@ -17,14 +17,15 @@ def points_on_line(line, W):
     for x in range(0, W):
         for y in range(0, 3 * W):
             if im_load[x, y] == 10:
-               points.append((x, y - W))
+                points.append((x, y - W))
 
     del draw
     del im
 
     dist = lambda (x, y): (x - W / 2) ** 2 + (y - W / 2) ** 2
 
-    return sorted(points, cmp = lambda x, y: dist(x) < dist(y))[:W]
+    return sorted(points, cmp=lambda x, y: dist(x) < dist(y))[:W]
+
 
 def vec_and_step(tang, W):
     (begin, end) = utils.get_line_ends(0, 0, W, tang)
@@ -34,6 +35,7 @@ def vec_and_step(tang, W):
     step = length / W
 
     return (x_norm, y_norm, step)
+
 
 def block_frequency(i, j, W, angle, im_load):
     tang = math.tan(angle)
@@ -49,7 +51,7 @@ def block_frequency(i, j, W, angle, im_load):
         points = points_on_line(line, W)
         level = 0
         for point in points:
-            level += im_load[point[0] + i * W, point[1] + j * W]
+            level += im_load[point[0] + i * W][point[1] + j * W]
         grey_levels.append(level)
 
     treshold = 100
@@ -72,20 +74,21 @@ def block_frequency(i, j, W, angle, im_load):
 
     return count / spaces if spaces > 0 else 0
 
-def freq(im, W, angles):
-    (x, y) = im.size
-    im_load = im.load()
-    freqs = [[0] for i in range(0, x, W)]
 
-    for i in range(1, x / W - 1):
-        for j in range(1, y / W - 1):
-            freq = block_frequency(i, j, W, angles[i][j], im_load)
+def freq(im, W, angles):
+    # (x, y) = im.size
+    # im_load = im.load()
+    freqs = [[0] for i in range(0, im.shape[0], W)]
+
+    for i in range(1, im.shape[0] / W - 1):
+        for j in range(1, im.shape[1] / W - 1):
+            freq = block_frequency(i, j, W, angles[i][j], im)
             freqs[i].append(freq)
         freqs[i].append(0)
 
-    freqs[0] = freqs[-1] = [0 for i in range(0, y / W)]
-
+    freqs[0] = freqs[im.shape[0] / W - 1] =freqs[im.shape[0] / W ]= [0 for i in range(0, im.shape[1] / W)]
     return freqs
+
 
 def freq_img(im, W, angles):
     (x, y) = im.size
@@ -99,11 +102,12 @@ def freq_img(im, W, angles):
 
     return freq_img
 
+
 if __name__ == "__main__":
     parser = argparse.ArgumentParser(description="Image frequency")
-    parser.add_argument("image", nargs=1, help = "Path to image")
-    parser.add_argument("block_size", nargs=1, help = "Block size")
-    parser.add_argument('--smooth', "-s", action='store_true', help = "Use Gauss for smoothing")
+    parser.add_argument("image", nargs=1, help="Path to image")
+    parser.add_argument("block_size", nargs=1, help="Block size")
+    parser.add_argument('--smooth', "-s", action='store_true', help="Use Gauss for smoothing")
     args = parser.parse_args()
 
     im = Image.open(args.image[0])

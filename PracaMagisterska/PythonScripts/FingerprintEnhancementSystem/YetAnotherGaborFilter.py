@@ -1,22 +1,48 @@
+'''
+
+Orientation.py
+Description:
+    This function computes the orientation angles.
+    The angles are then used to determine the angle of the line that passes in each 8x8 window in the image.
+
+Input:
+    image - 16x16 image
+
+Output:
+    orient_im - orientation image
+    final_im - image representing the orientation angles
+
+Note:
+    The author is not happy with the output of the drawing function. Although the angles
+    at each pixel are calculated correctly, when it comes to drawing the lines the algorithm
+    approximates an angle for each 8x8 window by making an average of the
+    angles computed at each pixel in the window. This results in drawing inaccurate lines. It is to be
+    noted that this does not affect the enhancement algorithm because the lines will not be considered (they are
+    drawn just for resemblance)
+
+
+@author: Edoardo Foco
+'''
+
 import cv2
 import numpy as np
 from scipy import ndimage
 import math
-from scipy.ndimage.filters import gaussian_filter
+import Filters
+from PIL import Image
+
 
 def calculateOrientation(image):
 
-    image = image
     # smooth image with gaussian blur
-    smoothed_im =gaussian_filter(image, 2)
+    smoothed_im = Filters.gaussFilter(image, 0.5, 3)
 
     # calculate gradients with sobel filter
-    dx = ndimage.sobel(image, 0)  # horizontal derivative
-    dy = ndimage.sobel(image, 1)  # vertical derivative
+    dx, dy = Filters.sobelFilter(smoothed_im)
 
     # smooth gradients
-    Gx = gaussian_filter(dx, 0.5)
-    Gy = gaussian_filter(dy, 0.5)
+    Gx = Filters.gaussFilter(dx, 0.5, 3)
+    Gy = Filters.gaussFilter(dy, 0.5, 3)
 
     # compute gradient magnitude
     Gxx = Gx ** 2
@@ -25,14 +51,13 @@ def calculateOrientation(image):
 
     # calculate theta
     theta = np.arctan2(Gy, Gx)
-    # print theta
 
     # smooth theta
-    # smoothed_theta = gaussian_filter(theta, 3)
+    smoothed_theta = Filters.gaussFilter(theta, 0.5, 3)
 
     # calculate double sine and cosine on theta --> increases precision
-    Tx = (G ** 2 + 0.001) * (np.cos(theta) ** 2 - np.sin(theta) ** 2)
-    Ty = (G ** 2 + 0.001) * (2 * np.sin(theta) * np.cos(theta))
+    Tx = (G ** 2 + 0.001) * (np.cos(smoothed_theta) ** 2 - np.sin(smoothed_theta) ** 2)
+    Ty = (G ** 2 + 0.001) * (2 * np.sin(smoothed_theta) * np.cos(smoothed_theta))
 
     denom = np.sqrt(Ty ** 2 + Tx ** 2)
 
@@ -40,14 +65,14 @@ def calculateOrientation(image):
     Ty = Ty / denom
 
     # smooth theta x and y
-    smoothed_Tx = gaussian_filter(Tx, 0.5)
-    smoothed_Ty = gaussian_filter(Ty, 0.5)
+    smoothed_Tx = Filters.gaussFilter(Tx, 0.5, 3)
+    smoothed_Ty = Filters.gaussFilter(Ty, 0.5, 3)
 
     # calculate new value for theta
     theta = np.pi + np.arctan2(smoothed_Ty, smoothed_Tx) / 2
 
     # draw lines
-    final_im = decomposeImage(image,theta)
+    final_im = decomposeImage(smoothed_im, theta)
     return theta, final_im
 
 def decomposeImage(image, theta):
@@ -75,7 +100,6 @@ def decomposeImage(image, theta):
             row_count += 1
 
         currenty += window_height
-
     # drawing lines on each 8 x 8 window
     for wins in range(0, 4):
         sum = 0
@@ -105,10 +129,10 @@ def decomposeImage(image, theta):
 
             x0, y0 = np.where(windows[wins] <= 0.5)  # values below or equal to 0 are darker regions, hence ridges
 
-            if np.any(x0):
-                cv2.line(windows[wins], point1, point2, cv2.cv.CV_RGB(255, 255, 255))
+            # if np.any(x0):
+                # cv2.line(windows[wins], point1, point2, (255, 255, 255))
 
-    final_image = reconstructImage( image, windows)
+    final_image = reconstructImage(image, windows)
     return final_image
 
 def reconstructImage(image, windows):
@@ -142,10 +166,22 @@ def reconstructImage(image, windows):
     return orient_im
 
 
-image = cv2.imread("C:\\Users\\Ojtek\\Documents\\DATABASE2\\001001.png",0)
-res1, res2 = calculateOrientation(image)
+image_gray = cv2.imread("C:\\Users\\Ojtek\\Documents\\DATABASE2\\001004.png",0)
+M0 = 100
+V0 = 100
+M = np.mean(image_gray)
+V = np.var(image_gray)
+for i in range(0, image_gray.shape[0]):
+    for j in range(0, image_gray.shape[1]):
+        if image_gray[i][j] > M:
+            image_gray[i][j] = M0 + np.sqrt(np.divide(V0 * np.power(image_gray[i][j] - M, 2), V))
+        else:
+            image_gray[i][j] = M0 - np.sqrt(np.divide(V0 * np.power(image_gray[i][j] - M, 2), V))
 
-cv2.imshow("AAA",res1)
-cv2.imshow("BBB",res2)
+cv2.imshow("image_gray", image_gray)
+
+gabor = calculateOrientation(image_gray)
+cv2.imshow("gabor", gabor[0])
+
 cv2.waitKey(0);
 cv2.destroyAllWindows();
